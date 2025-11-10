@@ -10,7 +10,7 @@ Each table performs transformations and combines data from the Silver layer
 -- Create Dimension: gold.dim_customers
 -- =============================================================================
 IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL
-    DROP VIEW gold.dim_customers;
+    Truncate table gold.dim_customers;
 GO
 
 INSERT INTO gold.dim_customers (customer_key,customer_id,customer_number,first_name,last_name,country,marital_status,gender,birthdate,create_date)
@@ -39,7 +39,7 @@ GO
 -- Create Dimension: gold.dim_products
 -- =============================================================================
 IF OBJECT_ID('gold.dim_products', 'U') IS NOT NULL
-    DROP TABLE gold.dim_products;
+    truncate TABLE gold.dim_products;
 GO
 
 INSERT INTO gold.dim_products (product_key, product_id, product_number, product_name,category_id,category,subcategory,maintenance,cost,product_line,start_date  )
@@ -65,7 +65,7 @@ GO
 -- Create Fact Table: gold.fact_sales
 -- =============================================================================
 IF OBJECT_ID('gold.fact_sales', 'U') IS NOT NULL
-    DROP TABLE gold.fact_sales;
+    TRUNCATE TABLE gold.fact_sales;
 GO
 
 INSERT INTO gold.fact_sales (order_number,product_key,customer_key,order_date,shipping_date,due_date,sales_amount,quantity,price)
