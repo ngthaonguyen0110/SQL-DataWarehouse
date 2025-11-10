@@ -1,6 +1,6 @@
 /*
 ===============================================================================
-Thí script creates tables in 'silver' schema, drops tables if they already exists.
+This script creates tables in 'silver' schema, drops tables if they already exists.
 ===============================================================================
 */
 
